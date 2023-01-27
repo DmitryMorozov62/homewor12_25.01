@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -30,20 +29,19 @@ public class Main {
         System.out.println("Задача 2");
         //пишем код для задачи 2
         int clientOS = 1;
-        LocalDate currentDate = LocalDate.now();
-        int currentYear = currentDate.getYear();
-        int os = getClient(clientOS,currentYear);
+        int year = 2017;
+        int os = getClient(clientOS,year);
         printClient(os);
     }
-    public static int getClient(int clientOS, int currentYear) {
+    public static int getClient(int clientOS, int year) {
         if (clientOS == 0) {
-            if (currentYear > 2015) {
+            if (year > 2015) {
                 return 0;
             }else {
                 return 1;
             }
         } else {
-            if (currentYear < 2015) {
+            if (year <= 2015) {
                 return 2;
             } else {
                 return 3;
