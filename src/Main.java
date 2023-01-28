@@ -1,3 +1,4 @@
+import java.time.*;
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -7,7 +8,7 @@ public class Main {
     public static void task1() {
         System.out.println("Задача 1");
         //пишем код для задачи 1
-        int year = 2024;
+        int year = 2014;
         int print = checkYear(year);
         printYear(year,print);
     }
@@ -18,7 +19,7 @@ public class Main {
             return 1;
         }
     }
-    public static void printYear(int year, int print) {
+    public static void printYear(int year,int print) {
         if (print == 0) {
             System.out.println("год " + year + " является високосным");
         } else {
@@ -34,8 +35,9 @@ public class Main {
         printClient(os);
     }
     public static int getClient(int clientOS, int year) {
+        int currentYear = LocalDate.now().getYear();
         if (clientOS == 0) {
-            if (year > 2015) {
+            if (year > currentYear) {
                 return 0;
             }else {
                 return 1;
